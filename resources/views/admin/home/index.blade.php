@@ -1,4 +1,4 @@
-@extends('app')
+@extends(env('LAYOUT_APP'))
 
 @section('content')
 <div class="container">
@@ -7,9 +7,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Home</div>
 
-				<div class="panel-body">
-					You are logged in!
-				</div>
+				<div class="panel-body"> You are logged in! </div>
 			</div>
 		</div>
 	</div>
