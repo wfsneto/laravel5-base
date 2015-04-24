@@ -1,8 +1,8 @@
 <html>
 	<head>
-		<title>Laravel</title>
+		<title>Laravel 5 Base</title>
 
-		<link href='//fonts.googleapis.com/css?family=Varela+Round:100' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 
 		<style>
 			body {
@@ -40,7 +40,7 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">FreteCam</div>
+				<div class="title">Laravel 5 Base</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
 			</div>
 		</div>

@@ -12,7 +12,7 @@ return [
      * Default Database Connection Name
      */
 
-    'default' => env('DB_DEFAULT', 'mysql'),
+    'default' => 'mysql',
 
     /**
      * Database Connections
@@ -22,10 +22,10 @@ return [
 
         'testing' => [
             'driver'    => 'mysql',
-            'host'      => 'localhost',
-            'database'  => 'fretecam_testing',
-            'username'  => 'root',
-            'password'  => 'raquel',
+            'host'      => env('DB_HOST'),
+            'database'  => env('DB_TESTING_DATABASE'),
+            'username'  => env('DB_USERNAME'),
+            'password'  => env('DB_PASSWORD'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
@@ -34,10 +34,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'fretecam_development'),
-            'username'  => env('DB_USERNAME', 'root'),
-            'password'  => env('DB_PASSWORD', 'raquel'),
+            'host'      => env('DB_HOST'),
+            'database'  => env('DB_DATABASE'),
+            'username'  => env('DB_USERNAME'),
+            'password'  => env('DB_PASSWORD'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
