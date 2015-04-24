@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-class Profile extends BaseModel
+class Profile extends Base
 {
+    use \Illuminate\Database\Eloquent\SoftDeletes;
+
     protected $fillable = [ 'name' ];
 
     protected $hidden = [];

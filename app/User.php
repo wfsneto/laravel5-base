@@ -6,9 +6,11 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-	use Authenticatable, CanResetPassword;
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+{
+	use Authenticatable, CanResetPassword, SoftDeletes;
 
 	/**
 	 * The database table used by the model.

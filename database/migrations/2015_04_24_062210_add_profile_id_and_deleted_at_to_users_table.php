@@ -14,7 +14,7 @@ class AddProfileIdAndDeletedAtToUsersTable extends Migration {
 	{
         Schema::table('users', function($table)
         {
-            $table->integer('profile_id');
+            $table->integer('profile_id')->after('id');
             $table->softDeletes();
         });
 	}
