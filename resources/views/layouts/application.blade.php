@@ -47,7 +47,14 @@
         </div>
     </nav>
 
-    @yield('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                @yield('content')
+            </div>
+        </div>
+    </div>
+
 
     <!-- Scripts -->
     <script src="{{ asset('/javascripts/application.js') }}"></script>

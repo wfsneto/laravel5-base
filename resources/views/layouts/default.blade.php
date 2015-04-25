@@ -7,7 +7,7 @@
 <body>
     @yield('nav')
 
-    @yield('content')
+    @yield('container')
 
     @yield('footer')
 

@@ -4,6 +4,8 @@ return [
     'add' => 'Adicionar',
     'all' => 'Ver todos',
     'regions' => [
+        'fa_icon' => 'fa fa-globe',
+        'region' => 'Região',
         'regions' => 'Regiões',
     ],
     'auth' => [

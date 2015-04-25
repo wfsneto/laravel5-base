@@ -32,11 +32,13 @@
                     @if(Auth::check())
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                                <i class="fa fa-globe"></i> {{ trans('modules.regions.regions') }} <i class="fa fa-chevron-down"></i>
+                                <i class="{{ trans('modules.regions.fa_icon') }}"></i>
+                                {{ trans('modules.regions.regions') }}
+                                <i class="fa fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ '#' }}"><i class="fa fa-bars"></i> {{ trans('modules.all') }}</a></li>
-                                <li><a href="{{ '#' }}"><i class="fa fa-plus"></i> {{ trans('modules.add') }}</a></li>
+                                <li><a href="{{ action('Admin\RegionsController@index') }}"><i class="fa fa-bars"></i> {{ trans('modules.all') }}</a></li>
+                                <li><a href="{{ action('Admin\RegionsController@create') }}"><i class="fa fa-plus"></i> {{ trans('modules.add') }}</a></li>
                             </ul>
                         </li>
                     @endif
@@ -62,6 +64,16 @@
             </div>
         </div>
     </nav>
+@stop
+
+@section('container')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @yield('content')
+            </div>
+        </div>
+    </div>
 @stop
 
 @section('footer')

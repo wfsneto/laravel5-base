@@ -4,10 +4,12 @@ namespace App\Models\Repository;
 
 class Base
 {
+    use \App\Models\Decorator\Base;
     /**
-     * String $myName
+     * String $name
      */
-    public $myName = 'Record';
+    public $gender = 'm';
+    public $name = 'records';
 
     /**
      * Integer $perpage
@@ -56,10 +58,10 @@ class Base
         $this->eloquent->fill($attributes);
 
         if ($this->eloquent->save()) {
-            $this->message( true, $this->myName . ' successfully created' );
+            $this->message(true, 'created');
         }
         else {
-            $this->message( false, $this->myName . ' can not be created, try again' );
+            $this->message(false, 'try_again');
         }
 
         return $this;
@@ -70,10 +72,10 @@ class Base
         $this->eloquent = $this->eloquent->find($id);
 
         if ($this->eloquent->update($attributes)) {
-            $this->message( true, $this->myName . ' successfully updated' );
+            $this->message(true, 'updated');
         }
         else {
-            $this->message( false, $this->myName . ' can not be updated, try again' );
+            $this->message(false, 'try_again');
         }
 
         return $this;
@@ -84,14 +86,14 @@ class Base
         $this->eloquent = $this->find($id);
 
         if (empty($this->eloquent)) {
-            $this->message(false, $this->myName . ' not found');
+            $this->message(false, 'not_found');
         }
         else {
             if ($this->eloquent->delete()) {
-                $this->message(true, $this->myName . ' successfully removed');
+                $this->message(true, 'removed');
             }
             else {
-                $this->message(false, $this->myName . ' can not be removed, try again');
+                $this->message(false, 'try_again');
             }
         }
 
@@ -101,14 +103,6 @@ class Base
     public function success()
     {
         return $this->success;
-    }
-
-    # protected methods
-
-    protected function message($success, $message = null)
-    {
-        $this->success = $success;
-        $this->message = $message;
     }
 
     protected function defaultScope()

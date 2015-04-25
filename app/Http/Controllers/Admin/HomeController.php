@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-	public function __construct()
+	public function __construct(\App\Models\Repository\Region $eloquent)
 	{
 		$this->middleware('auth');
 	}
