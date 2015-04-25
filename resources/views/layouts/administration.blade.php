@@ -37,8 +37,18 @@
                                 <i class="fa fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ action('Admin\RegionsController@index') }}"><i class="fa fa-bars"></i> {{ trans('modules.all') }}</a></li>
-                                <li><a href="{{ action('Admin\RegionsController@create') }}"><i class="fa fa-plus"></i> {{ trans('modules.add') }}</a></li>
+                                <li>
+                                    <a href="{{ action('Admin\RegionsController@index') }}">
+                                        <i class="{{ trans('modules.icon_index') }}"></i>
+                                        {{ trans('modules.index.f') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ action('Admin\RegionsController@create') }}">
+                                        <i class="{{ trans('modules.icon_create') }}"></i>
+                                        {{ trans('modules.create') }}
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     @endif

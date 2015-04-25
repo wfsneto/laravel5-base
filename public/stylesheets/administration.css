@@ -8290,5 +8290,10 @@ label,
 .checkbox label {
   font-weight: 300;
 }
+#actions-menu {
+  right: 0;
+  left: auto;
+  padding: 0px 0;
+}
 
 /*# sourceMappingURL=administration.css.map */
