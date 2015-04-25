@@ -34,7 +34,18 @@ bower update
  * Configure database tags
  * Set database name testing `DB_TESTING_DATABASE` on `.env` file
 
-7) Run tests
+7) Compile stylesheets and javascripts
+```
+gulp
+```
+
+or compile real time
+
+```
+gulp watch
+```
+
+8) Run tests
 ```
 vendor/bin/phpunit
 ```
