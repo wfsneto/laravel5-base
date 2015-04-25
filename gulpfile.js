@@ -1,9 +1,11 @@
 var elixir = require('laravel-elixir');
 
-elixir(function(mix) {
-    mix.less([ 'application.less', 'administration.less' ], 'public/stylesheets');
+var assets_path = 'resources/assets';
 
-    mix.scripts([
+elixir( function (mix) {
+    mix.less([ 'application.less', 'administration.less' ], 'public/stylesheets')
+
+    .scripts([
         // Vendors
         'bower/jquery/dist/jquery.min.js',
         'bower/bootstrap/dist/js/bootstrap.min.js',
@@ -11,9 +13,9 @@ elixir(function(mix) {
         //  application
         'javascripts/application.js'
     ],
-    'public/javascripts/application.js', 'resources/assets');
+    'public/javascripts/application.js', assets_path)
 
-    mix.scripts([
+    .scripts([
         // Vendors
         'bower/jquery/dist/jquery.min.js',
         'bower/bootstrap/dist/js/bootstrap.min.js',
@@ -22,5 +24,5 @@ elixir(function(mix) {
         'javascripts/administration.js'
 
     ],
-    'public/javascripts/administration.js', 'resources/assets');
+    'public/javascripts/administration.js', assets_path);
 });
