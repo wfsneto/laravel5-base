@@ -12,10 +12,7 @@ class InsertUserAdmin extends Migration {
 	 */
 	public function up()
 	{
-		$profile = App\Models\Profile::firstOrCreate([ 'name' => 'Administração' ]);
-
-        $user = new App\User;
-        $user->profile_id = $profile->id;
+		$user = new App\User;
         $user->name = 'Administrador';
         $user->email = 'admin@admin.com';
         $user->password = Hash::make('admin');

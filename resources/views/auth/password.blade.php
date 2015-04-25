@@ -1,4 +1,4 @@
-@extends(env('LAYOUT_ADMIN'))
+@extends(env('LAYOUT_APP'))
 
 @section('content')
 <div class="container-fluid">
