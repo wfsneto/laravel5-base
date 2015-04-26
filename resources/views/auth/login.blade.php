@@ -5,51 +5,50 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading"><i class="fa fa-sign-in fa-fw"></i> {{ trans('modules.auth.sign_in') }}</div>
                 <div class="panel-body">
-                    @if (count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">E-Mail Address</label>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-                            </div>
-                        </div>
+                            <label class="col-md-3 control-label">{{ trans('modules.auth.email') }}</label>
+                            <div class="col-md-7">
 
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Password</label>
-                            <div class="col-md-6">
-                                <input type="password" class="form-control" name="password">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}" />
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">Login</button>
+                            <label class="col-md-3 control-label">{{ trans('modules.auth.password') }}</label>
+                            <div class="col-md-7">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                    <input type="password" class="form-control" name="password" />
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ trans('modules.auth.sign_in') }}
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
 
-                                <a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
+                        <div class="form-group">
+                            <div class="col-md-2 col-md-offset-3">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember"> {{ trans('modules.auth.remember') }}
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <a class="btn btn-link" href="{{ url('/password/email') }}">
+                                    {{ trans('modules.auth.forgot') }}
+                                </a>
                             </div>
                         </div>
                     </form>

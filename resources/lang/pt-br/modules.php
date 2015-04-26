@@ -27,5 +27,13 @@ return [
         'sign_in' => 'Entrar',
         'sign_up' => 'Cadastrar',
         'sign_out' => 'Sair',
+        'name' => 'Nome',
+        'email' => 'Email',
+        'password' => 'Senha',
+        'password_confirmation' => 'Confirmar senha',
+        'remember' => 'Lembra?',
+        'forgot' => 'Esqueci a senha',
+        'send_pass' => 'Envie-me instruções',
+        'reset_pass' => 'Alterar senha',
     ],
 ];
