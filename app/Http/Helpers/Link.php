@@ -12,12 +12,12 @@ class Link
 
     public static function edit($controller, $params, $module = null)
     {
-        return self::link(self::controller($controller, $module), 'edit', $params, [ 'class' => 'btn btn-xs btn-info tooltips', 'data-original-title' => trans('modules.edit') ]);
+        return self::link(self::controller($controller, $module), 'edit', $params, [ 'class' => 'btn btn-xs btn-info bs-tooltip', 'data-original-title' => trans('modules.edit') ]);
     }
 
     public static function destroy($controller, $id)
     {
-        return '<span class="btn btn-danger btn-xs tooltips" data-original-title="' . trans('modules.destroy') . '" data-toggle="modal" data-target="#' . $controller . '_destroy_' . $id . '" ><i class="' . trans('modules.icon_destroy') . '"></i></span>';
+        return '<span class="btn btn-danger btn-xs bs-tooltip" data-original-title="' . trans('modules.destroy') . '" data-toggle="modal" data-target="#' . $controller . '_destroy_' . $id . '" ><i class="' . trans('modules.icon_destroy') . '"></i></span>';
     }
 
     public static function controller($controller, $module = null)

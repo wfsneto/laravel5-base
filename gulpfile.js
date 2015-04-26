@@ -10,7 +10,7 @@ elixir( function (mix) {
         'bower/jquery/dist/jquery.min.js',
         'bower/bootstrap/dist/js/bootstrap.min.js',
 
-        //  application
+        //  Application
         'javascripts/application.js'
     ],
     'public/javascripts/application.js', assets_path)
@@ -20,7 +20,10 @@ elixir( function (mix) {
         'bower/jquery/dist/jquery.min.js',
         'bower/bootstrap/dist/js/bootstrap.min.js',
 
-        //  application
+        //  Modules
+        'javascripts/modules/bootstrap.js',
+
+        //  Administration
         'javascripts/administration.js'
 
     ],
