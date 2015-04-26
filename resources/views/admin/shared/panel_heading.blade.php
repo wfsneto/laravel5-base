@@ -7,11 +7,10 @@ $action = $route[1]; ?>
 <div class="panel-heading">
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
         <i class="{{ trans('modules.' . $name . '.fa_icon') }}"></i>
         {{ trans('modules.' . $name . '.' . $name) }}
-    </div>
-    <div class="col-md-4 text-right">
+
         {{-- Split button --}}
         <div class="btn-group">
             <span class="btn btn-xs btn-default">

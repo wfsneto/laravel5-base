@@ -4,11 +4,13 @@ return [
     # General
     'actions' => 'Ações',
     'index' => 'Listagem',
-    'icon_index' => 'fa fa-bars',
+    'icon_index' => 'fa fa-bars fa-fw',
     'create' => 'Adicionar',
-    'icon_create' => 'fa fa-plus',
+    'icon_create' => 'fa fa-plus fa-fw',
     'edit' => 'Editar',
-    'icon_edit' => 'fa fa-edit',
+    'icon_edit' => 'fa fa-pencil fa-fw',
+    'destroy' => 'Apagar',
+    'icon_destroy' => 'fa fa-times fa-fw',
 
     # Forms
     'button_save' => 'Salvar :name',
