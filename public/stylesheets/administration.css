@@ -8291,7 +8291,10 @@ label,
   font-weight: 300;
 }
 #actions-menu {
-  padding: 0px;
+  padding: 2px;
+}
+table .actions {
+  width: 75px;
 }
 
 /*# sourceMappingURL=administration.css.map */
