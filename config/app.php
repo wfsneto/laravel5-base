@@ -200,7 +200,7 @@ return [
         # Additional
         'Form'      => 'Illuminate\Html\FormFacade',
         'Html'      => 'Illuminate\Html\HtmlFacade',
-        'Debugbar' => 'Barryvdh\Debugbar\Facade',
+        'Debugbar'  => 'Barryvdh\Debugbar\Facade',
 
         # Helpers
         'Message'   => 'App\Http\Helpers\Message',
