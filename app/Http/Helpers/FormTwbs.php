@@ -23,12 +23,12 @@ class FormTwbs
 
     public static function text($module, $column, $value = null, $attributes = [])
     {
-        return self::input('text', $module, $column, $value = null, $attributes = []);
+        return self::input('text', $module, $column, $value, $attributes = []);
     }
 
     public static function textarea($module, $column, $value = null, $attributes = [])
     {
-        return self::input('textarea', $module, $column, $value = null, $attributes = []);
+        return self::input('textarea', $module, $column, $value, $attributes = []);
     }
 
     # Getters
