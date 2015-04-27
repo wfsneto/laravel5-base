@@ -13,13 +13,14 @@ use \App\Models\Region;
  */
 class RegionsTest extends \TestCase
 {
-    public $controller_name = 'Regions';
+    public $controller_name = 'Admin\Regions';
     /**
      * setUp run before each test
      */
     public function setUp()
     {
         parent::setUp();
+        Region::truncate();
 
         $this->data = [
             '_token' => $this->token,
@@ -31,12 +32,12 @@ class RegionsTest extends \TestCase
             'code' => $this->faker->word,
             'name' => $this->faker->name,
         ]);
+
     }
 
     public function tearDown()
     {
         parent::tearDown();
-        Region::find( $this->region->id )->forceDelete();
     }
 
     /**

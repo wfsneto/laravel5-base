@@ -14,16 +14,12 @@ class HomeTest extends \TestCase
     /**
      * @group home_index
      */
-	public function testIndex()
-	{
+    public function testIndex()
+    {
         # request
         $crawler = $this->action('GET', $this->controller_url('index'));
 
-        echo '<pre>';
-        print_r($crawler->getContent());
-        print_r('<hr />' . basename(__FILE__) . ':' . __LINE__);die;
-
         # assertions
         $this->assertResponseOk();
-	}
+    }
 }

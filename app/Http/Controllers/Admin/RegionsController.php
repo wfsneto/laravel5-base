@@ -33,7 +33,7 @@ class RegionsController extends Controller
             return redirect(action('Admin\RegionsController@index'))->with('success', $stored->message);
         }
         else {
-            return redirect()->back()->with('error', $stored->message);
+            return redirect(action('Admin\RegionsController@index'))->with('error', $stored->message);
         } # endif;
     }
 
