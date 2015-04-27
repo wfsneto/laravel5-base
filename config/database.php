@@ -20,22 +20,10 @@ return [
 
     'connections' => [
 
-        'testing' => [
-            'driver'    => 'mysql',
-            'host'      => env('DB_HOST'),
-            'database'  => env('DB_TESTING_DATABASE'),
-            'username'  => env('DB_USERNAME'),
-            'password'  => env('DB_PASSWORD'),
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'strict'    => false,
-        ],
-
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST'),
-            'database'  => env('DB_DATABASE'),
+            'database'  => env('DB_DATABASE') . '_' . $app->environment(),
             'username'  => env('DB_USERNAME'),
             'password'  => env('DB_PASSWORD'),
             'charset'   => 'utf8',
