@@ -6,13 +6,26 @@
                 <span class="close" data-dismiss="modal">
                     <i class="fa fa-times"></i>
                 </span>
-                <h3 class="modal-title modal-title-delete">{{ trans('Attention!') }}</h3>
+                <h3 class="modal-title">
+                    {{ trans('modules.Attention') }}!
+                </h3>
             </div>
-            <div class="modal-body">{{ trans('Do you really want to remove?') }}</div>
+
+            <div class="modal-body">
+                {{ trans('modules.wanna_remove') }}
+            </div>
+
             <div class="modal-footer">
                 {!! Form::open([ 'action' => [ 'Admin\\' . ucfirst(snake_case(str_plural($name))) . 'Controller@destroy', $id ], 'method' => 'DELETE' ]) !!}
-                    <span class="btn btn-xs btn-default" data-dismiss="modal">{{ trans('cancel') }}</span>
-                    <button type="submit" class="btn btn-xs btn-danger">{{ trans('remove') }}</button>
+                    <span class="btn btn-xs btn-default" data-dismiss="modal">
+                        <i class="{{ trans('modules.icon_cancel') }}"></i>
+                        {{ trans('modules.button_cancel') }}
+                    </span>
+
+                    <button type="submit" class="btn btn-xs btn-danger">
+                        <i class="{{ trans('modules.icon_remove') }}"></i>
+                        {{ trans('modules.button_remove') }}
+                    </button>
                 {!! Form::close() !!}
             </div>
         </div>
