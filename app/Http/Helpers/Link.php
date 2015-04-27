@@ -4,15 +4,24 @@ namespace App\Http\Helpers;
 
 class Link
 {
-    public static function link($controller, $action, $params = null, $attributes = [])
+    public static function link($controller, $action, $label, $params = null, $attributes = [])
     {
-        return '<a href="' . action($controller . '@' . $action, $params) . '"' . self::attributes($attributes) . '>' .
-            '<i class="' . trans('modules.icon_' . $action) . '"></i> </a>';
+        return '<a href="' . action($controller . '@' . $action, $params) . '"' . self::attributes($attributes) . '>' . $label . '</a>';
+    }
+
+    public static function link_icon($controller, $action, $params = null, $attributes = [])
+    {
+        return self::link($controller, $action, '<i class="' . trans('modules.icon_' . $action) . '"></i>', $params, $attributes);
+    }
+
+    public static function click_to_create($controller, $module = null)
+    {
+        return trans('modules.click_to_create', [ 'link' => self::link(self::controller($controller, $module), 'create', trans('modules.here')) ]);
     }
 
     public static function edit($controller, $params, $module = null)
     {
-        return self::link(self::controller($controller, $module), 'edit', $params, [ 'class' => 'btn btn-xs btn-info bs-tooltip', 'data-original-title' => trans('modules.edit') ]);
+        return self::link_icon(self::controller($controller, $module), 'edit', $params, [ 'class' => 'btn btn-xs btn-info bs-tooltip', 'data-original-title' => trans('modules.edit') ]);
     }
 
     public static function destroy($controller, $id)
@@ -22,7 +31,7 @@ class Link
 
     public static function controller($controller, $module = null)
     {
-        return (empty($module) ? $controller : $module . '\\' . $controller) . 'Controller';
+        return (empty($module) ? ucfirst(str_plural($controller)) : $module . '\\' . ucfirst(str_plural($controller))) . 'Controller';
     }
 
     public static function attributes($attributes)

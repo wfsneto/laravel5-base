@@ -6,8 +6,7 @@
 
     <div class="panel-body">
         @if($regions->isEmpty())
-            {{ Message::not_found('regions', 'f') }}, clique
-            <a href="{{ action('Admin\RegionsController@create') }}">aqui</a> para adicionar
+            {{ Message::not_found('regions', 'f') }}, {!! Link::click_to_create('region', 'Admin') !!}
         @else
             <table class="table">
                 <thead>
@@ -22,7 +21,7 @@
                         <td>[{{ $region->code }}] {{ $region->name }}</td>
                         <td>
                             <div class="text-right">
-                                {!! Link::edit('Regions', $region->id, 'Admin') !!}
+                                {!! Link::edit('region', $region->id, 'Admin') !!}
                                 {!! Link::destroy('region', $region->id) !!}
                             </div>
 

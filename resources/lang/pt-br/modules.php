@@ -11,9 +11,16 @@ return [
     'icon_edit' => 'fa fa-pencil fa-fw',
     'destroy' => 'Apagar',
     'icon_destroy' => 'fa fa-times fa-fw',
+    'click_to_create' => 'clique :link para adicionar',
 
     'Attention' => 'Atenção',
     'icon_destroy' => 'fa fa-times fa-fw',
+    'here' => 'aqui',
+    'success' => 'sucesso',
+    'error' => 'erro',
+    'information' => 'informação',
+    'warning' => 'aviso',
+    'error_title' => 'Ocorreu alguns erros',
 
     # Forms
     'button_save' => 'Salvar :name',
