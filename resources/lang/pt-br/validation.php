@@ -82,9 +82,10 @@ return [
     */
     'custom' => [
         'attribute-name' => [
-            'rule-name' => 'custom-message',
         ],
     ],
+
+    'has_children' => 'Este registro não pode ser removido, porque existem outros registros associados',
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes

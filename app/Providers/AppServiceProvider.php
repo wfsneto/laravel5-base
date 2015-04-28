@@ -1,6 +1,7 @@
 <?php namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Validation\Factory;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -9,9 +10,17 @@ class AppServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-	public function boot()
+	public function boot(Factory $validator)
 	{
-		//
+		$path = app_path() . '/Validators';
+        $list = new \RecursiveDirectoryIterator($path);
+        $folders = new \RecursiveIteratorIterator($list);
+
+        foreach($folders as $folder) {
+            if (!in_array($folder->getFilename(), array(".", ".."))) {
+                require_once $folder->getPathname();
+            }
+        }
 	}
 
 	/**

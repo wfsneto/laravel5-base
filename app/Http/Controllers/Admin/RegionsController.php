@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Repository\Region;
 use App\Http\Requests\Region\SaveRequest;
+use App\Http\Requests\Region\DestroyRequest;
 
 class RegionsController extends Controller
 {
@@ -61,7 +62,7 @@ class RegionsController extends Controller
         } # endif;
     }
 
-    public function destroy($id)
+    public function destroy($id, DestroyRequest $request)
     {
         $destroyed = $this->repository->destroy( $id );
 
