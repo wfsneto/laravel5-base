@@ -16,7 +16,7 @@
             </div>
 
             <div class="modal-footer">
-                {!! Form::open([ 'action' => [ 'Admin\\' . ucfirst(snake_case(str_plural($name))) . 'Controller@destroy', $id ], 'method' => 'DELETE' ]) !!}
+                {!! Form::open([ 'action' => [ 'Admin\\' . ucfirst(camel_case(str_plural($name))) . 'Controller@destroy', $id ], 'method' => 'DELETE' ]) !!}
                     <span class="btn btn-xs btn-default" data-dismiss="modal">
                         <i class="{{ trans('modules.icon_cancel') }}"></i>
                         {{ trans('modules.button_cancel') }}
