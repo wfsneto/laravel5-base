@@ -24,14 +24,14 @@ $action = $route[1]; ?>
             <ul id="actions-menu" class="dropdown-menu" role="menu">
                 @if($action != 'index')
                     <li>
-                        <a href="{{ action('Admin\RegionsController@index') }}">
+                        <a href="{{ action($controller . '@index') }}">
                             <i class="fa fa-bars"></i> {{ trans('modules.index') }}
                         </a>
                     </li>
                 @endif
                 @if($action != 'create')
                     <li>
-                        <a href="{{ action('Admin\RegionsController@create') }}">
+                        <a href="{{ action($controller . '@create') }}">
                             <i class="fa fa-plus"></i> {{ trans('modules.create') }}
                         </a>
                     </li>
