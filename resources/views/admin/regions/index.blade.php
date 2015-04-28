@@ -31,6 +31,7 @@
                 @endforeach
                 </tbody>
             </table>
+            @include('admin/shared/pagination', [ 'collection' => $regions ])
         @endif
     </div>
 </div>
