@@ -4,10 +4,40 @@ namespace App\Http\Helpers;
 
 class FormTwbs
 {
+    public static $class_div_error = 'has-error';
+
     public static function input($type, $module, $column, $value = null, $attributes = [])
     {
-        return \Form::label($column, self::label($module, $column)) .
-            \Form::{$type}($column, $value, self::attributes($module, $column, $attributes));
+        return self::open_div($column) .
+            \Form::label($column, self::label($module, $column), [ 'class' => 'control-label' ]) .
+            \Form::{$type}($column, $value, self::attributes($module, $column, $attributes)) .
+            self::get_error($column) .
+            self::close_div();
+    }
+
+    public static function open_div($column)
+    {
+        $class_div_error = is_null(self::get_error($column)) ? null : ' ' . self::$class_div_error;
+
+        return '<div class="form-group' . $class_div_error . '">';
+    }
+
+    public static function close_div()
+    {
+        return '</div>';
+    }
+
+    public static function get_error($column)
+    {
+        if (\Session::has('errors')) {
+            $errors = \Session::get('errors')->getMessages('default');
+            $messages = isset($errors[$column]) ? $errors[$column] : '';
+
+            if (!empty($messages)) {
+                return '<span class="help-block">' . (is_array($messages) ? implode('<br />', $messages) : $messages) . '</span>';
+            }
+        }
+        return null;
     }
 
     public static function submit($module, $attributes = [])

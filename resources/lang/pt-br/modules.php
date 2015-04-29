@@ -20,7 +20,7 @@ return [
     'error' => 'erro',
     'information' => 'informação',
     'warning' => 'aviso',
-    'error_title' => 'Ocorreu alguns erros',
+    'error_title' => 'Ocorreu um erro, verifique o formulário para corrigir',
 
     # Forms
     'button_save' => 'Salvar :name',

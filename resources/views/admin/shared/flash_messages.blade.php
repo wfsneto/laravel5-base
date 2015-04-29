@@ -36,14 +36,9 @@
             </div>
         @endif
 
-        @if (count($errors) > 0)
+        @if ($errors->any())
             <div class="alert alert-danger">
-                <strong>Oops!</strong> {{ ucfirst(trans('modules.error_title')) }}.<br />
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+                <strong>Oops!</strong> {{ ucfirst(trans('modules.error_title')) }}<br />
             </div>
         @endif
     </div>

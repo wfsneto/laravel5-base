@@ -43,7 +43,7 @@ class RegionsController extends Controller
         $region = $this->repository->find( $id );
 
         if (empty($region)) {
-            return redirect(action('Admin\RegionsController@index'))->with('error', 'No region found');
+            return redirect(action('Admin\RegionsController@index'))->with('error', \Message::not_found('regions','f'));
         }
         else {
             return view('admin/regions/edit')->with( 'region', $region );
