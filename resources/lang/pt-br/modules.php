@@ -20,6 +20,7 @@ return [
     'error' => 'erro',
     'information' => 'informação',
     'warning' => 'aviso',
+    'choice' => '',
     'error_title' => 'Ocorreu um erro, verifique o formulário para corrigir',
 
     # Forms
@@ -32,7 +33,7 @@ return [
 
     # Modules
     'regions' => [
-        'fa_icon' => 'fa fa-globe',
+        'fa_icon' => 'fa fa-globe fa-fw',
         'region' => 'Região',
         'regions' => 'Regiões',
         'code' => 'Código',

@@ -61,6 +61,15 @@ class FormTwbs
         return self::input('textarea', $module, $column, $value, $attributes = []);
     }
 
+    public static function select($module, $column, $options = [], $value = null, $attributes = [])
+    {
+        return self::open_div($column) .
+            \Form::label($column, self::label($module, $column), [ 'class' => 'control-label' ]) .
+            \Form::select($column, self::options($options), $value, self::attributes($module, $column, $attributes)) .
+            self::get_error($column) .
+            self::close_div();
+    }
+
     # Getters
 
     public static function attributes($module, $column, $attributes)
@@ -69,6 +78,13 @@ class FormTwbs
         $attributes += [ 'placeholder' => self::label($module, $column) ];
 
         return $attributes;
+    }
+
+    public static function options($options)
+    {
+        $options = $options + [ '' => trans('modules.choice') ];
+        ksort($options);
+        return $options;
     }
 
     public static function label($module, $column)
