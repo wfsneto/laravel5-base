@@ -4,6 +4,7 @@ namespace App\Models\Repository;
 
 class Base
 {
+    use \App\Models\Finder\Base;
     use \App\Models\Decorator\Base;
     /**
      * String $name
@@ -29,28 +30,6 @@ class Base
     public function __construct(\Eloquent $eloquent)
     {
         $this->eloquent = $eloquent;
-    }
-
-    public function init($attributes = [])
-    {
-        $name = get_class($this->eloquent);
-        $resource = new $name;
-        foreach ($attributes as $attribute => $value) {
-            if (in_array($attribute, $resource->getFillable())) {
-                $resource->$attribute = $value;
-            }
-        }
-        return $resource;
-    }
-
-    public function all()
-    {
-        return $this->defaultScope()->search()->ordenation()->paginate($this->perpage);
-    }
-
-    public function find($id)
-    {
-        return $this->defaultScope()->find($id);
     }
 
     public function store($attributes)
@@ -103,10 +82,5 @@ class Base
     public function success()
     {
         return $this->success;
-    }
-
-    protected function defaultScope()
-    {
-        return $this->eloquent;
     }
 }
