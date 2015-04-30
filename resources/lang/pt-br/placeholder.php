@@ -8,7 +8,7 @@ return [
         'regions' => 'Regiões',
         'code' => 'Código',
         'name' => 'Nome',
-        'test' => 'Teste',
+        'test' => 'Digite um teste',
     ],
     'auth' => [
         'sign_in' => 'Entrar',

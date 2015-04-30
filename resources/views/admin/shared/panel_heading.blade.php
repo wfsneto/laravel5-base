@@ -32,7 +32,7 @@ $action = $route[1]; ?>
                 @if($action != 'create')
                     <li>
                         <a href="{{ action($controller . '@create') }}">
-                            <i class="fa fa-plus"></i> {{ trans('modules.create') }}
+                            <i class="fa fa-plus"></i> {{ trans('general.create') }}
                         </a>
                     </li>
                 @endif

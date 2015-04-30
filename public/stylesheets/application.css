@@ -8285,10 +8285,11 @@ button.close {
 .fa-medium:before {
   content: "\f23a";
 }
-body,
-label,
+body {
+  cursor: default;
+}
 .checkbox label {
-  font-weight: 300;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=application.css.map */

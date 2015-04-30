@@ -53,7 +53,7 @@ class FormTwbs
 
     public static function text($module, $column, $value = null, $attributes = [])
     {
-        return self::input('text', $module, $column, $value, $attributes = []);
+        return self::input('text', $module, $column, $value, $attributes);
     }
 
     public static function textarea($module, $column, $value = null, $attributes = [])
@@ -75,7 +75,21 @@ class FormTwbs
     public static function attributes($module, $column, $attributes)
     {
         $attributes['class'] = isset($attributes['class']) ? 'form-control ' . $attributes['class'] : 'form-control';
-        $attributes += [ 'placeholder' => self::label($module, $column) ];
+
+        if (isset($attributes['placeholder']) && $attributes['placeholder'] == false) {
+            unset($attributes['placeholder']);
+        }
+        else {
+            $key = $module . '.' . $column;
+            $placeholder = trans('placeholder.' . $key);
+
+            if ($placeholder == 'placeholder.' . $key) {
+                $label = trans('modules.' . $key);
+                $placeholder = $label == 'modules.' . $key ? null : $label;
+            }
+
+            $attributes += [ 'placeholder' => $placeholder ];
+        }
 
         return $attributes;
     }
