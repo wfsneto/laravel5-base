@@ -7,24 +7,24 @@
                     <i class="fa fa-times"></i>
                 </span>
                 <h3 class="modal-title">
-                    {{ trans('modules.Attention') }}!
+                    {{ trans('form.Attention') }}!
                 </h3>
             </div>
 
             <div class="modal-body">
-                {{ trans('modules.wanna_remove') }}
+                {{ trans('form.wanna_remove') }}
             </div>
 
             <div class="modal-footer">
                 {!! Form::open([ 'action' => [ 'Admin\\' . ucfirst(camel_case(str_plural($name))) . 'Controller@destroy', $id ], 'method' => 'DELETE' ]) !!}
                     <span class="btn btn-xs btn-default" data-dismiss="modal">
-                        <i class="{{ trans('modules.icon_cancel') }}"></i>
-                        {{ trans('modules.button_cancel') }}
+                        <i class="{{ trans('general.icon_cancel') }}"></i>
+                        {{ trans('form.button_cancel') }}
                     </span>
 
                     <button type="submit" class="btn btn-xs btn-danger">
-                        <i class="{{ trans('modules.icon_remove') }}"></i>
-                        {{ trans('modules.button_remove') }}
+                        <i class="{{ trans('general.icon_remove') }}"></i>
+                        {{ trans('form.button_remove') }}
                     </button>
                 {!! Form::close() !!}
             </div>

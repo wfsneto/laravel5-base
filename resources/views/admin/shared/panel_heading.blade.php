@@ -14,8 +14,8 @@ $action = $route[1]; ?>
         {{-- Split button --}}
         <div class="btn-group">
             <span class="btn btn-xs btn-default">
-                <i class="{{ trans('modules.icon_' . $action) }}"></i>
-                {{ trans('modules.' . $action) }}
+                <i class="{{ trans('general.icon_' . $action) }}"></i>
+                {{ trans('general.' . $action) }}
             </span>
             <span class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-chevron-down"></i>
@@ -25,7 +25,7 @@ $action = $route[1]; ?>
                 @if($action != 'index')
                     <li>
                         <a href="{{ action($controller . '@index') }}">
-                            <i class="fa fa-bars"></i> {{ trans('modules.index') }}
+                            <i class="fa fa-bars"></i> {{ trans('general.index') }}
                         </a>
                     </li>
                 @endif

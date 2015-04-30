@@ -12,7 +12,7 @@
                 <thead>
                     <tr>
                         <th>{{ trans('modules.regions.name') }}</th>
-                        <th class="actions text-right">{{ trans('modules.actions') }}</th>
+                        <th class="actions text-right">{{ trans('general.actions') }}</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -42,7 +42,7 @@ class FormTwbs
 
     public static function submit($module, $attributes = [])
     {
-        $label = trans('modules.button_save', [ 'name' => strtolower(trans('modules.' . $module . '.' . str_singular($module))) ]);
+        $label = trans('form.button_save', [ 'name' => strtolower(trans('modules.' . $module . '.' . str_singular($module))) ]);
 
         $attributes['class'] = isset($attributes['class']) ? 'btn btn-primary ' . $attributes['class'] : 'btn btn-primary';
 
@@ -82,7 +82,7 @@ class FormTwbs
 
     public static function options($options)
     {
-        $options = $options + [ '' => trans('modules.choice') ];
+        $options = $options + [ '' => trans('general.choice') ];
         ksort($options);
         return $options;
     }

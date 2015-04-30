@@ -39,14 +39,14 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li>
                                     <a href="{{ action('Admin\RegionsController@index') }}">
-                                        <i class="{{ trans('modules.icon_index') }}"></i>
-                                        {{ trans('modules.index') }}
+                                        <i class="{{ trans('general.icon_index') }}"></i>
+                                        {{ trans('general.index') }}
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{{ action('Admin\RegionsController@create') }}">
-                                        <i class="{{ trans('modules.icon_create') }}"></i>
-                                        {{ trans('modules.create') }}
+                                        <i class="{{ trans('general.icon_create') }}"></i>
+                                        {{ trans('general.create') }}
                                     </a>
                                 </li>
                             </ul>
