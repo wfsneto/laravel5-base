@@ -1,4 +1,4 @@
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<div class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
         @if(Auth::check())
             <li><a href="{{ action('Admin\HomeController@index') }}"> <i class="fa fa-home fa-fw"></i> Dashboard</a></li>
