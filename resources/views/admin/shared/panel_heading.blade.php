@@ -18,7 +18,7 @@ $action = $route[1]; ?>
                 {{ trans('general.' . $action) }}
             </span>
             <span class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-chevron-down"></i>
+                <i class="{{ trans('general.icon_chevron_down') }}"></i>
                 <span class="sr-only"></span>
             </span>
             <ul id="actions-menu" class="dropdown-menu" role="menu">
