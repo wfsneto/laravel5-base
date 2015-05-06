@@ -2,14 +2,14 @@
 
 <div class="row">
     <div class="col-md-4">
-        <div class="{{ FormTwbs::class_div_error('code')}}">
+        <div class="{{ FormTwbs::classDivError('code')}}">
             {!! FormTwbs::label('code', trans('modules.regions.code')) !!}
             {!! FormTwbs::text('code') !!}
         </div>
     </div>
 
     <div class="col-md-8">
-        <div class="{{ FormTwbs::class_div_error('name')}}">
+        <div class="{{ FormTwbs::classDivError('name')}}">
             {!! FormTwbs::label('name', trans('modules.regions.name')) !!}
             {!! FormTwbs::text('name') !!}
         </div>

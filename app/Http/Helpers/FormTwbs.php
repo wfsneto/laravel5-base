@@ -8,9 +8,29 @@ class FormTwbs extends \Form
 
     public static function input($type, $name, $value = null, $attributes = [])
     {
-        $output = parent::{$type}($name, $value, self::attributes($attributes));
+        return parent::{$type}($name, $value, self::attributes($attributes));
+    }
 
-        $output .= self::get_error($name);
+    public static function textBeforeAddon($name, $addon, $value = null, $attributes = [])
+    {
+        $output  = '<div class="input-group">';
+        $output .= '<span class="input-group-addon">' . $addon . '</span>';
+        $output .= self::input('text', $name, $value, $attributes);
+        $output .= '</div>';
+
+        $output .= self::getError($name);
+
+        return $output;
+    }
+
+    public static function textAfterAddon($name, $addon, $value = null, $attributes = [])
+    {
+        $output  = '<div class="input-group">';
+        $output .= self::input('text', $name, $value, $attributes);
+        $output .= '<span class="input-group-addon">' . $addon . '</span>';
+        $output .= '</div>';
+
+        $output .= self::getError($name);
 
         return $output;
     }
@@ -28,7 +48,7 @@ class FormTwbs extends \Form
         return $attributes;
     }
 
-    public static function get_error($name)
+    public static function getError($name)
     {
         if (\Session::has('errors')) {
             $errors = \Session::get('errors')->getMessages('default');
@@ -41,9 +61,9 @@ class FormTwbs extends \Form
         return null;
     }
 
-    public static function class_div_error($name)
+    public static function classDivError($name)
     {
-        return is_null(self::get_error($name)) ? 'form-group' : 'form-group ' . self::$class_div_error;
+        return is_null(self::getError($name)) ? 'form-group' : 'form-group ' . self::$class_div_error;
     }
 
     public static function submit($module, $attributes = [])
@@ -59,19 +79,20 @@ class FormTwbs extends \Form
 
     public static function text($name, $value = null, $attributes = [])
     {
-        return self::input('text', $name, $value, $attributes);
+        return self::input('text', $name, $value, $attributes) . self::getError($name);
     }
 
     public static function textarea($name, $value = null, $attributes = [])
     {
-        return self::input('textarea', $name, $value, $attributes);
+        $attributes['rows'] = isset($attributes['rows']) ? $attributes['rows'] : 2;
+        return self::input('textarea', $name, $value, $attributes) . self::getError($name);
     }
 
-    public static function select($column, $options = [], $value = null, $attributes = [])
+    public static function select($name, $options = [], $value = null, $attributes = [])
     {
         $output = parent::select($name, $options, $value, self::attributes($attributes));
 
-        $output .= self::get_error($name);
+        $output .= self::getError($name);
 
         return $output;
     }
