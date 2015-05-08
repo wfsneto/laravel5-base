@@ -65,7 +65,7 @@ class FormTwbs extends \Form
             $messages = isset($errors[$name]) ? $errors[$name] : '';
 
             if (!empty($messages)) {
-                return '<span class="help-block">' . (is_array($messages) ? implode('<br />', $messages) : $messages) . '</span>';
+                return '<small class="help-block">' . (is_array($messages) ? ucfirst(strtolower(current($messages))) : ucfirst(strtolower($message))) . '</small>';
             }
         }
         return null;

@@ -37,9 +37,17 @@
         @endif
 
         @if ($errors->any())
-            <div class="alert alert-danger">
-                <strong>Oops!</strong> {{ ucfirst(trans('general.error_title')) }}<br />
-            </div>
+            <ul class="alert alert-danger">
+                <li><strong>Oops!</strong> {{ ucfirst(trans('general.error_title')) }}</li>
+
+                @if($errors->any())
+                    @foreach($errors->getMessages('default') as $key => $messages)
+                        @foreach ($messages as $message)
+                            <li><small>* {{ ucfirst(strtolower($message)) }}</small></li>
+                        @endforeach
+                    @endforeach
+                @endif
+            </ul>
         @endif
     </div>
 </div>
