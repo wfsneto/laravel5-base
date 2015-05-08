@@ -11,16 +11,25 @@ class FormTwbs extends \Form
         return parent::{$type}($name, $value, self::attributes($attributes));
     }
 
-    public static function textBeforeAddon($name, $addon, $value = null, $attributes = [])
+    public static function inputAddon($input, $addon = [])
     {
         $output  = '<div class="input-group">';
-        $output .= '<span class="input-group-addon">' . $addon . '</span>';
-        $output .= self::input('text', $name, $value, $attributes);
+        $output .= empty($addon['before']) ? null : '<span class="input-group-addon">' . $addon['before'] . '</span>';
+        $output .= $input;
+        $output .= empty($addon['after']) ? null : '<span class="input-group-addon">' . $addon['after'] . '</span>';
         $output .= '</div>';
 
-        $output .= self::getError($name);
-
         return $output;
+    }
+
+    public static function textBeforeAddon($name, $before, $value = null, $attributes = [])
+    {
+        return self::inputAddon(self::input('text', $name, $value, $attributes), [ 'before' => $before ]) . self::getError($name);
+    }
+
+    public static function passwordBeforeAddon($name, $before, $attributes = [])
+    {
+        return self::inputAddon( parent::password($name, self::attributes($attributes)), [ 'before' => $before ]) . self::getError($name);
     }
 
     public static function textAfterAddon($name, $addon, $value = null, $attributes = [])
@@ -52,6 +61,7 @@ class FormTwbs extends \Form
     {
         if (\Session::has('errors')) {
             $errors = \Session::get('errors')->getMessages('default');
+            $name = str_replace('[', '.', str_replace(']', '', $name));
             $messages = isset($errors[$name]) ? $errors[$name] : '';
 
             if (!empty($messages)) {
@@ -90,6 +100,8 @@ class FormTwbs extends \Form
 
     public static function select($name, $options = [], $value = null, $attributes = [])
     {
+        $attributes['id'] = isset($attributes['id']) ? $attributes['id'] : $name;
+
         $output = parent::select($name, $options, $value, self::attributes($attributes));
 
         $output .= self::getError($name);
