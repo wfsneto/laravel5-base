@@ -1,6 +1,7 @@
 var Administration = {
     init: function () {
         Bootstrap.init();
+        Chosen.init();
     }
 };
 

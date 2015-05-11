@@ -9,6 +9,8 @@ elixir( function (mix) {
         // Vendors
         'bower/jquery/dist/jquery.min.js',
         'bower/bootstrap/dist/js/bootstrap.min.js',
+        'javascripts/downloaded/chosen/chosen.jquery.min.js',
+        'javascripts/downloaded/chosen/chosen.jquery.init.js',
 
         //  Application
         'javascripts/application.js'
@@ -19,6 +21,8 @@ elixir( function (mix) {
         // Vendors
         'bower/jquery/dist/jquery.min.js',
         'bower/bootstrap/dist/js/bootstrap.min.js',
+        'javascripts/downloaded/chosen/chosen.jquery.min.js',
+        'javascripts/downloaded/chosen/chosen.jquery.init.js',
 
         //  Modules
         'javascripts/modules/bootstrap.js',
