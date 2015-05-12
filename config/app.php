@@ -148,6 +148,7 @@ return [
         # Additional
         'Illuminate\Html\HtmlServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
+        'Caffeinated\Shinobi\ShinobiServiceProvider',
 
     ],
 

@@ -9,7 +9,7 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
-Route::group([ 'prefix' => 'admin', 'namespace' => 'Admin' ], function() {
+Route::group([ 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth.admin' ], function() {
     # Root admin
     Route::get('/', 'HomeController@index');
 
