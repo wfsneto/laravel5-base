@@ -15,11 +15,8 @@ class Authenticate
 	{
 		if (\Auth::check()) {
             if (!\Auth::user()->is('admin')) {
-                echo '<pre>';
-                print_r('não tem permissão');
-                // print_r($request->route()->getAction());
-                echo '<hr>';
-                print_r(basename(__FILE__) . ':' . __LINE__);die;;
+                return redirect(action('HomeController@index'))
+                    ->with('info', 'Você não tem permissão para acessar essas área');
             }
         }
 
