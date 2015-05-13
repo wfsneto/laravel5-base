@@ -1,8 +1,10 @@
-<?php namespace App\Http\Middleware\Admin;
+<?php
+
+namespace App\Http\Middleware;
 
 use Closure;
 
-class Authenticate
+class Shinobi
 {
 	/**
 	 * Handle an incoming request.
@@ -13,8 +15,10 @@ class Authenticate
 	 */
 	public function handle($request, Closure $next)
 	{
+        $route = $request->route()->getAction();
+
 		if (\Auth::check()) {
-            if (!\Auth::user()->is('admin')) {
+            if (!\Auth::user()->is( $route['shinobi'] )) {
                 return redirect(action('HomeController@index'))
                     ->with('info', 'Você não tem permissão para acessar essas área');
             }
