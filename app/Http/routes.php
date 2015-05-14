@@ -10,7 +10,7 @@ Route::controllers([
 ]);
 
 Route::group([ 'middleware' => [ 'auth', 'shinobi' ] ], function() {
-    Route::group([ 'prefix' => 'admin', 'namespace' => 'Admin' ], function() {
+    Route::group([ 'prefix' => 'admin', 'namespace' => 'Admin', 'roles' => 'admin' ], function() {
         # Root admin
         Route::get('/', 'HomeController@index');
 
@@ -18,12 +18,12 @@ Route::group([ 'middleware' => [ 'auth', 'shinobi' ] ], function() {
         Route::resource('regions', 'RegionsController');
     });
 
-    Route::group([ 'prefix' => 'company', 'namespace' => 'Company' ], function() {
+    Route::group([ 'prefix' => 'company', 'namespace' => 'Company', 'roles' => 'company' ], function() {
         # Root company
         Route::get('/', 'HomeController@index');
     });
 
-    Route::group([ 'prefix' => 'vehicle', 'namespace' => 'Vehicle' ], function() {
+    Route::group([ 'prefix' => 'vehicle', 'namespace' => 'Vehicle', 'roles' => 'vehicle' ], function() {
         # Root vehicle
         Route::get('/', 'HomeController@index');
     });
