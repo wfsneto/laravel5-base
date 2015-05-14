@@ -6,44 +6,50 @@ use Illuminate\Http\RedirectResponse;
 
 class RedirectIfAuthenticated {
 
-	/**
-	 * The Guard implementation.
-	 *
-	 * @var Guard
-	 */
-	protected $auth;
+    /**
+     * The Guard implementation.
+     *
+     * @var Guard
+     */
+    protected $auth;
 
-	/**
-	 * Create a new filter instance.
-	 *
-	 * @param  Guard  $auth
-	 * @return void
-	 */
-	public function __construct(Guard $auth)
-	{
-		$this->auth = $auth;
-	}
+    /**
+     * Create a new filter instance.
+     *
+     * @param  Guard  $auth
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
 
-	/**
-	 * Handle an incoming request.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  \Closure  $next
-	 * @return mixed
-	 */
-	public function handle($request, Closure $next)
-	{
-		if ($this->auth->check())
-		{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        if ($this->auth->check())
+        {
             if ($this->auth->user()->is('admin')) {
-                return new RedirectResponse(url('/admin'));
+                return new RedirectResponse(action('Admin\HomeController@index'));
+            }
+            else if ($this->auth->user()->is('company')) {
+                return new RedirectResponse(action('Company\HomeController@index'));
+            }
+            else if ($this->auth->user()->is('vehicle')) {
+                return new RedirectResponse(action('Vehicle\HomeController@index'));
             }
             else {
-                return new RedirectResponse(url('/'));
+                return new RedirectResponse(action('HomeController@index'));
             }
-		}
+        }
 
-		return $next($request);
-	}
+        return $next($request);
+    }
 
 }

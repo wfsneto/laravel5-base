@@ -9,10 +9,22 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
-Route::group([ 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => [ 'auth', 'shinobi' ], 'shinobi' => 'admin' ], function() {
-    # Root admin
-    Route::get('/', 'HomeController@index');
+Route::group([ 'middleware' => [ 'auth', 'shinobi' ] ], function() {
+    Route::group([ 'prefix' => 'admin', 'namespace' => 'Admin' ], function() {
+        # Root admin
+        Route::get('/', 'HomeController@index');
 
-    # Regions
-    Route::resource('regions', 'RegionsController');
+        # Regions
+        Route::resource('regions', 'RegionsController');
+    });
+
+    Route::group([ 'prefix' => 'company', 'namespace' => 'Company' ], function() {
+        # Root company
+        Route::get('/', 'HomeController@index');
+    });
+
+    Route::group([ 'prefix' => 'vehicle', 'namespace' => 'Vehicle' ], function() {
+        # Root vehicle
+        Route::get('/', 'HomeController@index');
+    });
 });

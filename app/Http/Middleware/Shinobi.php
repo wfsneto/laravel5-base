@@ -3,9 +3,15 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\RedirectResponse;
 
 class Shinobi
 {
+    public function __construct()
+    {
+        $this->user = \Auth::user();
+    }
+
 	/**
 	 * Handle an incoming request.
 	 *
@@ -18,9 +24,26 @@ class Shinobi
         $route = $request->route()->getAction();
 
 		if (\Auth::check()) {
-            if (!\Auth::user()->is( $route['shinobi'] )) {
-                return redirect(action('HomeController@index'))
-                    ->with('info', 'Você não tem permissão para acessar essas área');
+            if ($this->user->is('admin')) {
+                if ($request->url() != url('/admin')) {
+                    return new RedirectResponse(action('Admin\HomeController@index'));
+                }
+            }
+            else if ($this->user->is('company')) {
+                if ($request->url() != url('/company')) {
+                    return new RedirectResponse(action('Company\HomeController@index'));
+                }
+            }
+            else if ($this->user->is('vehicle')) {
+                if ($request->url() != url('/vehicle')) {
+                    return new RedirectResponse(action('Vehicle\HomeController@index'));
+                }
+            }
+            else {
+                \Auth::logout();
+                if ($request->url() != url('/')) {
+                    return new RedirectResponse(action('HomeController@index'));
+                }
             }
         }
 
