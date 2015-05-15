@@ -1,4 +1,4 @@
-@extends(env('LAYOUT_ADMIN'))
+@extends(config('layouts.administration'))
 
 @section('content')
 <div class="panel panel-default">
