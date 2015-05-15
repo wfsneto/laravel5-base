@@ -25,7 +25,7 @@
                                 {!! Link::destroy('region', $region->id) !!}
                             </div>
 
-                            @include('admin/shared/modal_destroy', [ 'name' => 'region', 'id' => $region->id ])
+                            @include('admin/shared/modal_destroy', [ 'controller' => 'Admin\RegionsController', 'id' => $region->id ])
                         </td>
                     </tr>
                 @endforeach
