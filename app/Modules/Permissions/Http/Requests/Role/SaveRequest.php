@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Region;
+namespace App\Modules\Permissions\Http\Requests\Role;
 
 use App\Http\Requests\Request;
 
@@ -24,15 +24,14 @@ class SaveRequest extends Request
     public function rules()
     {
         return [
-            'code' => [ 'required', 'unique:regions,code,' . $this->id() . ',id,deleted_at,NULL' ],
-            'name' => [ 'required', 'unique:regions,name,' . $this->id() . ',id,deleted_at,NULL' ]
+            'name' => [ 'required', 'unique:roles,name,' . $this->id() . ',id' ],
+            'slug' => [ 'required', 'unique:roles,slug,' . $this->id() . ',id' ],
         ];
     }
 
-    protected function current_id()
+    protected function id()
     {
-        $id = $this->route('regions');
+        $id = $this->route('roles');
         return isset($id) ? $id : 'NULL';
     }
-
 }

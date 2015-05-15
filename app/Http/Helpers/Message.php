@@ -12,9 +12,9 @@ class Message
             return $trans;
         }
         else {
-            $gender = '.' . (in_array($gender, [ 'f', 'm' ]) ? $gender : 'm');
+            $gender = in_array($gender, [ 'f', 'm' ]) ? $gender : 'm';
 
-            return trans('modules.' . $name . '.' . str_singular($name)) . trans('messages.' . $type . $gender);
+            return trans($name) . trans('messages.' . $type . '.' . $gender);
         }
     }
 

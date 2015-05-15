@@ -22,7 +22,7 @@ return [
         'f' => ' não pode ser salva, tente novamente',
     ],
     'not_found' => [
-        'm' => ' não foi encontrado',
-        'f' => ' não foi encontrada',
+        'm' => ' não encontrado',
+        'f' => ' não encontrada',
     ],
 ];

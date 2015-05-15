@@ -78,7 +78,7 @@ class FormTwbs extends \Form
 
     public static function submit($module, $attributes = [])
     {
-        $label = trans('form.button_save', [ 'name' => strtolower(trans('modules.' . $module . '.' . str_singular($module))) ]);
+        $label = trans('form.button_save', [ 'name' => strtolower( trans($module) ) ]);
 
         $attributes['class'] = isset($attributes['class']) ? 'btn btn-primary ' . $attributes['class'] : 'btn btn-primary';
 

@@ -3,7 +3,7 @@
 # has_children
 $validator->extendImplicit('has_children', function ($attribute, $value, $parameters)
 {
-    $eloquent = 'App\Models\\' . array_shift($parameters);
+    $eloquent = array_shift($parameters);
 
     $resource = $eloquent::find($attribute);
 
