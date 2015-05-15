@@ -149,6 +149,7 @@ return [
         'Illuminate\Html\HtmlServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Caffeinated\Shinobi\ShinobiServiceProvider',
+        'Caffeinated\Modules\ModulesServiceProvider',
 
     ],
 
@@ -202,6 +203,7 @@ return [
         'Form'      => 'Illuminate\Html\FormFacade',
         'Html'      => 'Illuminate\Html\HtmlFacade',
         'Debugbar'  => 'Barryvdh\Debugbar\Facade',
+        'Module'    => 'Caffeinated\Modules\Facades\Module',
 
         # Helpers
         'Message'   => 'App\Http\Helpers\Message',
