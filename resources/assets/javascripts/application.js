@@ -1,6 +1,6 @@
 var Application = {
     init: function () {
-        Bootstrap.init();
+        Materialize.init();
         Chosen.init();
     }
 };
