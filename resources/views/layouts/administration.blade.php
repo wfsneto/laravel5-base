@@ -73,7 +73,7 @@
 @section('footer')
 <footer class="container">
   <div class="row">
-    <div class="col-md-12 text-right">
+    <div class="col-md-12 right">
       <a href="//emmet.com.br" target="blank">
         <img src="//emmet.com.br/img/logo.png" style="height: 21px;">
       </a>
