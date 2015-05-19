@@ -17,6 +17,7 @@ return [
     'icon_edit' => 'fa fa-pencil',
     'destroy' => 'Apagar',
     'icon_destroy' => 'fa fa-times',
+    'icon_remove' => 'fa fa-trash',
     'click_to_create' => 'clique :link para adicionar',
 
     'icon_chevron_down' => 'fa fa-angle-down',

@@ -10,8 +10,10 @@
         </div>
         <div class="col s6">
             {!! Form::open([ 'action' => [ $controller . '@destroy', $id ], 'method' => 'DELETE' ]) !!}
-            {{-- <i class="{{ trans('general.icon_remove') }}"></i> --}}
-            <button type="submit" class="btn-flat right">{{ trans('form.button_remove') }}</button>
+            <button type="submit" class="btn-flat right waves-effect waves-light">
+                <i class="{{ trans('general.icon_remove') }}"></i>
+                {{ trans('form.button_remove') }}
+            </button>
             {!! Form::close() !!}
         </div>
     </div>

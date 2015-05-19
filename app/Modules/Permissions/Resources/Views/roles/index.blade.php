@@ -13,7 +13,7 @@
                     <tr>
                         <th>{{ trans('permissions::roles.slug') }}</th>
                         <th>{{ trans('permissions::roles.name') }}</th>
-                        <th class="actions text-right">{{ trans('general.actions') }}</th>
+                        <th class="actions text-right"></th>
                     </tr>
                 </thead>
                 <tbody>

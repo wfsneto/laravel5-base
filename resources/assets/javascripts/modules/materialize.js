@@ -1,6 +1,7 @@
 var Materialize = {
     init: function () {
         this.sideNav();
+        this.tooltip();
         this.leanModal();
     },
 
@@ -8,8 +9,11 @@ var Materialize = {
         $(".button-collapse").sideNav();
     },
 
+    tooltip: function () {
+        $('.tooltipped').tooltip({delay: 50});
+    },
+
     leanModal: function () {
         $('.modal-trigger').leanModal();
-
     }
 };

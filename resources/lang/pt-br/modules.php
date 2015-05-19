@@ -18,7 +18,7 @@ return [
         'email' => 'Email',
         'password' => 'Senha',
         'password_confirmation' => 'Confirmar senha',
-        'remember' => 'Lembra?',
+        'remember' => 'Lembrar?',
         'forgot' => 'Esqueci a senha',
         'send_pass' => 'Envie-me instruções',
         'reset_pass' => 'Alterar senha',

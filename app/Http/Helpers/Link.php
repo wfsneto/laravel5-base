@@ -21,13 +21,17 @@ class Link
 
     public static function edit($controller, $params, $module = null)
     {
-        return self::link_icon(self::controller($controller, $module), 'edit', $params, [ 'class' => 'btn btn-xs btn-info bs-tooltip', 'data-original-title' => trans('general.edit') ]);
+        return self::link_icon(self::controller($controller, $module), 'edit', $params, [ 'class' => 'tooltipped modal-trigger waves-effect waves-light btn green', 'data-tooltip' => trans('general.edit'), 'data-position' => 'top' ]);
     }
 
     public static function destroy($controller, $id)
     {
-        // return '<span class="btn btn-danger btn-xs bs-tooltip" data-original-title="' . trans('general.destroy') . '" data-toggle="modal" data-target="#' . str_plural($controller) . '_destroy_' . $id . '" ><i class="' . trans('general.icon_destroy') . '"></i></span>';
-        return '<a class="modal-trigger waves-effect waves-light btn" href="#' . str_plural($controller) . '_destroy_' . $id . '"><i class="' . trans('general.icon_destroy') . '"></i></a>';
+        return '<a class="tooltipped modal-trigger waves-effect waves-light btn red"
+            href="#' . str_plural($controller) . '_destroy_' . $id . '"
+            data-tooltip="' . trans('general.destroy') . '"
+            data-position="top">
+                <i class="' . trans('general.icon_destroy') . '"></i>
+        </a>';
     }
 
     public static function controller($controller, $module = null)
