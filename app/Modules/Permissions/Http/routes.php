@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['prefix' => 'permissions'], function() {
+Route::group([ 'prefix' => 'permissions',  'middleware' => [ 'auth' ] ], function() {
     Route::get('/', 'RolesController@index');
     Route::resource('/profiles', 'RolesController');
     Route::get('/profiles/{profiles}/users', 'RolesController@users');

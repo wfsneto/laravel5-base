@@ -1,4 +1,4 @@
-var Materialize = {
+var MaterializeInit = {
     init: function () {
         this.sideNav();
         this.tooltip();

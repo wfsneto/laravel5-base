@@ -1,6 +1,6 @@
 var Administration = {
     init: function () {
-        Materialize.init();
+        MaterializeInit.init();
         Chosen.init();
     }
 };

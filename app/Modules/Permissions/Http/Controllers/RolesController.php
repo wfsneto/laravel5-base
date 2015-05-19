@@ -72,4 +72,16 @@ class RolesController extends Controller
             return $this->redirect_action('index')->with('error', $destroyed->message);
         } # endif;
     }
+
+    public function users($id)
+    {
+        $role = $this->repository->find( $id );
+
+        if (empty($role)) {
+            return $this->redirect_action('index')->with('error', \Message::not_found('permissions::roles.role','f'));
+        }
+        else {
+            return view('permissions::roles/users')->with( 'role', $role );
+        }
+    }
 }

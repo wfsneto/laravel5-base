@@ -1,6 +1,6 @@
 var Application = {
     init: function () {
-        Materialize.init();
+        MaterializeInit.init();
         Chosen.init();
     }
 };
