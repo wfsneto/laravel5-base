@@ -22,7 +22,10 @@
                         <td width="30">{{ $role->slug }}</td>
                         <td> {{ $role->name }}</td>
                         <td>
-                            <div class="text-right">
+                            <div class="right">
+                                <a href="{{ action('\App\Modules\Permissions\Http\Controllers\RolesController@users', $role->id) }}" class="tooltipped modal-trigger waves-effect waves-light btn blue" data-tooltip="usuários" data-position="top">
+                                    <i class="fa fa-users"></i>
+                                </a>
                                 {!! Link::edit('role', $role->id, '\App\Modules\Permissions\Http\Controllers') !!}
                                 {!! Link::destroy('role', $role->id) !!}
                             </div>

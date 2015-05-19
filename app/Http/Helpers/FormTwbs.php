@@ -95,6 +95,7 @@ class FormTwbs extends \Form
     public static function textarea($name, $value = null, $attributes = [])
     {
         $attributes['rows'] = isset($attributes['rows']) ? $attributes['rows'] : 2;
+        $attributes['class'] = isset($attributes['class']) ? $attributes['class'] . ' materialize-textarea' : 'materialize-textarea';
         return self::input('textarea', $name, $value, $attributes) . self::getError($name);
     }
 

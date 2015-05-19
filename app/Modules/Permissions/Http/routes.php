@@ -13,5 +13,6 @@
 
 Route::group(['prefix' => 'permissions'], function() {
     Route::get('/', 'RolesController@index');
-    Route::resource('/roles', 'RolesController');
+    Route::resource('/profiles', 'RolesController');
+    Route::get('/profiles/{profiles}/users', 'RolesController@users');
 });
