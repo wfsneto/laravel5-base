@@ -24,7 +24,7 @@ class DestroyRequest extends Request
     public function rules()
     {
         return [
-            $this->route('regions') => [ 'has_children:Region,states' ]
+            $this->route('regions') => [ 'has_children:\App\Models\Region,states' ]
         ];
     }
 }

@@ -26,7 +26,8 @@ class Link
 
     public static function destroy($controller, $id)
     {
-        return '<span class="btn btn-danger btn-xs bs-tooltip" data-original-title="' . trans('general.destroy') . '" data-toggle="modal" data-target="#' . str_plural($controller) . '_destroy_' . $id . '" ><i class="' . trans('general.icon_destroy') . '"></i></span>';
+        // return '<span class="btn btn-danger btn-xs bs-tooltip" data-original-title="' . trans('general.destroy') . '" data-toggle="modal" data-target="#' . str_plural($controller) . '_destroy_' . $id . '" ><i class="' . trans('general.icon_destroy') . '"></i></span>';
+        return '<a class="modal-trigger waves-effect waves-light btn" href="#' . str_plural($controller) . '_destroy_' . $id . '"><i class="' . trans('general.icon_destroy') . '"></i></a>';
     }
 
     public static function controller($controller, $module = null)

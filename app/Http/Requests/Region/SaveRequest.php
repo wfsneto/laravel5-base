@@ -29,7 +29,7 @@ class SaveRequest extends Request
         ];
     }
 
-    protected function current_id()
+    protected function id()
     {
         $id = $this->route('regions');
         return isset($id) ? $id : 'NULL';

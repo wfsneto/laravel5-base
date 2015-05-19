@@ -16,10 +16,16 @@ var c=!1,d=!0,e=275,f=200,g=a(this),h=a("<div></div>").addClass("material-placeh
 var Materialize = {
     init: function () {
         this.sideNav();
+        this.leanModal();
     },
 
     sideNav: function () {
-         $(".button-collapse").sideNav();
+        $(".button-collapse").sideNav();
+    },
+
+    leanModal: function () {
+        $('.modal-trigger').leanModal();
+
     }
 };
 

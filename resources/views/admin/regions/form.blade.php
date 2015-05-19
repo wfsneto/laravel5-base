@@ -1,24 +1,20 @@
 {!! FormTwbs::model($region, $options) !!}
 
 <div class="row">
-    <div class="col-md-4">
-        <div class="{{ FormTwbs::classDivError('code')}}">
-            {!! FormTwbs::label('code', trans('modules.regions.code')) !!}
-            {!! FormTwbs::text('code') !!}
-        </div>
+    <div class="input-field col s4">
+        {!! FormTwbs::label('code', trans('modules.regions.code')) !!}
+        {!! FormTwbs::text('code') !!}
     </div>
 
-    <div class="col-md-8">
-        <div class="{{ FormTwbs::classDivError('name')}}">
-            {!! FormTwbs::label('name', trans('modules.regions.name')) !!}
-            {!! FormTwbs::text('name') !!}
-        </div>
+    <div class="input-field col s8">
+        {!! FormTwbs::label('name', trans('modules.regions.name')) !!}
+        {!! FormTwbs::text('name') !!}
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-12">
-        {!! FormTwbs::submit('regions', [ 'class' => 'btn-block' ]) !!}
+    <div class="col s12">
+        {!! FormTwbs::submit('modules.regions.region', [ 'class' => 'btn-block' ]) !!}
     </div>
 </div>
 
